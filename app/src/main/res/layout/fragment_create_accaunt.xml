@@ -6,16 +6,184 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.login.CreateAccauntFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:fontFamily="@font/ubuntu_mono"
-        app:layout_constraintTop_toTopOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="center"
+        android:layout_marginTop="@dimen/margin_8"
+       app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/title"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_24"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:fontFamily="@font/ubuntu_mono"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:layout_marginTop="@dimen/margin_14"
         android:layout_marginStart="20dp"
-        android:text="Hisob yaratish" />
+        android:text="Hisob yaratish"
+        tools:ignore="SpUsage" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fio"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/margin_16"
+        app:errorEnabled="true"
+       app:layout_constraintTop_toBottomOf="@id/title"
+        app:passwordToggleTint="@color/black"
+        app:placeholderTextColor="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fio_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_login"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/ubuntu_mono"
+            android:hint="Ismingizni kiriting"
+            android:inputType="text"
+            android:maxLength="100"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:paddingHorizontal="@dimen/margin_16"
+        android:background="@color/white"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/fio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:placeholderTextColor="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_key"
+            android:drawablePadding="20dp"
+            android:hint="Telefon raqam"
+            android:fontFamily="@font/ubuntu_mono"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:maxLength="30"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:paddingHorizontal="@dimen/margin_16"
+        android:background="@color/white"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/phone"
+        app:placeholderTextColor="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_key"
+            android:drawablePadding="20dp"
+            android:hint="Email"
+            android:fontFamily="@font/ubuntu_mono"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:maxLength="30"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_f"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:paddingHorizontal="@dimen/margin_16"
+        android:background="@color/white"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:passwordToggleEnabled="true"
+        app:placeholderTextColor="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_f_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_key"
+            android:drawablePadding="20dp"
+            android:hint="@string/password"
+            android:fontFamily="@font/ubuntu_mono"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLength="30"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_second"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:paddingHorizontal="@dimen/margin_16"
+        android:background="@color/white"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/password_f"
+        app:passwordToggleEnabled="true"
+        app:placeholderTextColor="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_second_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_key"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/ubuntu_mono"
+            android:hint="@string/password_recovery"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLength="30"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saqlash"
+        android:layout_marginHorizontal="@dimen/margin_24"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:fontFamily="@font/ubuntu_mono"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

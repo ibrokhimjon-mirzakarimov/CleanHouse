@@ -6,4 +6,17 @@
     </style>
 
     <style name="Theme.CleanHouse" parent="Base.Theme.CleanHouse" />
+
+    <!-- res/values/styles.xml -->
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- TextInputLayout uchun xususiyatlari -->
+        <item name="boxStrokeColor">@color/color_primary</item>
+        <item name="hintTextColor">@color/color_primary_light</item>
+    </style>
+
+    <style name="MyTextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <!-- TextInputEditText uchun xususiyatlari -->
+        <item name="android:textColor">@color/color_primary</item>
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
 </resources>
